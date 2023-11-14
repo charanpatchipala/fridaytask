@@ -154,7 +154,7 @@
                  </div>`;
       };
       function deleteUser(id) {
-        fetch(`https://64f6f41e9d7754084952d8a0.mockapi.io/users/${id}`, {
+        fetch(`https://64f6f41e9d7754084952d8a0.mockapi.io/travels/${id}`, {
           method: "DELETE",
         }).then(() => getTrips()); //refresh data
         console.log("deleting... User", id);
@@ -177,7 +177,7 @@
           imageUrl,
         };
 
-        fetch("https://64f6f41e9d7754084952d8a0.mockapi.io/users/", {
+        fetch("https://64f6f41e9d7754084952d8a0.mockapi.io/travels/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -204,7 +204,7 @@
       function searchdestinations() {
         const searchInput = document.querySelector(".searchInput").value;
         fetch(
-          `https://64f6f41e9d7754084952d8a0.mockapi.io/users?destination=${searchInput}`,
+          `https://64f6f41e9d7754084952d8a0.mockapi.io/travels?destination=${searchInput}`,
           {
             method: "GET",
           }
@@ -248,7 +248,7 @@
         getTrips();
       }
       function totalUsers() {
-        fetch(`https://64f6f41e9d7754084952d8a0.mockapi.io/users`, {
+        fetch(`https://64f6f41e9d7754084952d8a0.mockapi.io/travels`, {
           method: "GET",
         })
           .then((res) => res.json())
@@ -263,7 +263,7 @@
 
       function getTrips() {
         fetch(
-          `https://64f6f41e9d7754084952d8a0.mockapi.io/users?page=${pageno}&limit=${limit}`,
+          `https://64f6f41e9d7754084952d8a0.mockapi.io/travels?page=${pageno}&limit=${limit}`,
           {
             method: "GET",
           }
